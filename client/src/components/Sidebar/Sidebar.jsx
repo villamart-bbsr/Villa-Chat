@@ -2,15 +2,13 @@ import React, { useEffect, useState } from 'react';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import './Sidebar.scss';
 import SidebarItem from './SidebarItem';
-import calendar from '../../assets/calendar.svg';
-import chat from '../../assets/chat.svg';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { v1 as uuid } from 'uuid';
-import { getAccessToken } from '../../api/github';
-import LoginGithub from 'react-login-github';
 import { useDispatch } from 'react-redux';
 import { createEvent } from '../../actions/events';
 import moment from 'moment';
+// import { GitHubLogin } from '@react-oauth/github'; // NEW
+import { getAccessToken } from '../../api/github';
 
 function Sidebar() {
     const [auth, setAuth] = useState(JSON.parse(localStorage.getItem('git_oauth')));
@@ -22,39 +20,39 @@ function Sidebar() {
 
     useEffect(() => {
         setCurrentUser(JSON.parse(localStorage.getItem('profile')));
-    }, [location]);
-  
-    useEffect(() => {
         setAuth(JSON.parse(localStorage.getItem('git_oauth')));
     }, [location]);
 
-    const onSuccess = async(response) => {
-        const result = await getAccessToken(response.code);
-        console.log(result);
-        localStorage.setItem('git_oauth', JSON.stringify(result));
-    }
-    const onFailure = response => console.error(response);
+    // const handleGitHubSuccess = async (credentialResponse) => {
+    //     try {
+    //         const result = await getAccessToken(credentialResponse.code); // your backend handles `code` exchange
+    //         console.log(result);
+    //         localStorage.setItem('git_oauth', JSON.stringify(result));
+    //         setAuth(result);
+    //     } catch (error) {
+    //         console.error("GitHub Login Error:", error);
+    //     }
+    // };
+
+    // const handleGitHubError = () => {
+    //     console.error("GitHub login failed");
+    // };
 
     const createId = () => {
         const id = uuid();
         history.push(`/board/${id}`);
-    }
+    };
 
-    // Helper function to check if route is active
     const isActiveRoute = (path) => {
         const currentPath = location.pathname;
-        
-        // Exact matches for main pages
         if (path === '/chat') return currentPath === '/chat';
         if (path === '/github') return currentPath === '/github';
         if (path === '/calendar') return currentPath === '/calendar';
         if (path === '/board') return currentPath.startsWith('/board/');
-        
-        // New Meeting is never "active" since it's an action button, not a page
         if (path === '/room') return false;
-        
         return false;
     };
+
     const createNewEvent = () => {
         const meetingId = uuid();
         setVideoId(meetingId);
@@ -63,10 +61,10 @@ function Sidebar() {
             StartTime: new Date(),
             EndTime: new Date(new Date().setHours(new Date().getHours() + 1)),
             _id: meetingId,
-            Creator: currentUser.result.name,
-            CreatorId: currentUser.result._id,
+            Creator: currentUser?.result?.name,
+            CreatorId: currentUser?.result?._id,
         }));
-    }
+    };
 
     return (
         <div className="sidebar">
@@ -78,7 +76,7 @@ function Sidebar() {
 
             <div className="sidebar__content">
                 <Link to={`/room/${videoId}`} target="_blank">
-                    <div onClick={() => {createNewEvent()}}>
+                    <div onClick={createNewEvent}>
                         <SidebarItem 
                             icon="https://img.icons8.com/ios/36/000000/video-conference.png"
                             text="New Meeting"
@@ -98,7 +96,7 @@ function Sidebar() {
                     />
                 </Link>
 
-                {auth ?
+                {/* {auth ? (
                     <Link to="/github">
                         <SidebarItem
                             icon="https://img.icons8.com/ios/36/000000/github--v1.png"
@@ -107,25 +105,21 @@ function Sidebar() {
                             isActive={isActiveRoute('/github')}
                         />
                     </Link>
-                :
-                    <LoginGithub clientId="f6099a354e555e602bcb"
-                        onSuccess={onSuccess}
-                        onFailure={onFailure}
-                        scope="admin:org repo user"
-                        className="auth__button"
-                    >
-                        <Link to="/github">
-                            <SidebarItem
-                                icon="https://img.icons8.com/ios/36/000000/github--v1.png"
-                                text="GitHub"
-                                hoverIcon="https://img.icons8.com/ios-filled/36/48bb78/github.png"
-                                isActive={isActiveRoute('/github')}
-                            />
-                        </Link>
-                    </LoginGithub>
-                }
+                ) : (
+                    <div className="auth__button">
+                        <GitHubLogin
+                            onSuccess={handleGitHubSuccess}
+                            onError={handleGitHubError}
+                            authorizationParams={{
+                                client_id: 'f6099a354e555e602bcb',
+                                scope: 'read:user repo admin:org',
+                                redirect_uri: `${window.location.origin}/github`, // optional
+                            }}
+                        />
+                    </div>
+                )} */}
 
-                <div onClick={() => {createId()}}>
+                <div onClick={createId}>
                     <SidebarItem
                         icon="https://img.icons8.com/ios/36/000000/whiteboard.png"
                         text="Whiteboard"
@@ -150,7 +144,7 @@ function Sidebar() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Sidebar
+export default Sidebar;
