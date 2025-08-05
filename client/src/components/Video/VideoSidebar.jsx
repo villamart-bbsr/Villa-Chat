@@ -4,7 +4,7 @@ import '../Sidebar/Sidebar.scss';
 import SidebarItem from '../Sidebar/SidebarItem';
 import { useLocation, useParams } from 'react-router-dom';
 import { getAccessToken } from '../../api/github';
-import LoginGithub from 'react-login-github';
+// import LoginGithub from 'react-login-github';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
@@ -80,7 +80,7 @@ const VideoSidebar = () => {
                     hoverIcon="https://img.icons8.com/ios/36/6264A7/video-conference.png"
                 />
             </div>
-            <div onClick={() => {openGitHub()}}>
+            {/* <div onClick={() => {openGitHub()}}>
             {auth ?
                 <SidebarItem 
                     icon="https://img.icons8.com/ios/36/000000/github--v1.png"
@@ -101,7 +101,7 @@ const VideoSidebar = () => {
                     />
                 </LoginGithub>
             }
-            </div>
+            </div> */}
             <div onClick={() => {openBoard()}}>
                 <SidebarItem 
                     icon="https://img.icons8.com/ios/36/000000/whiteboard.png"
