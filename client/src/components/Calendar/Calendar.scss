@@ -1,0 +1,308 @@
+/* Green Theme Calendar Styles */
+
+/* Main appointment styling with green theme */
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment {
+    background: linear-gradient(135deg, #E8F5E8 0%, #D4F1D4 100%);
+    border-radius: 8px;
+    border-left: 5px solid #2E7D32 !important;
+    color: #1B5E20;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for appointments */
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment:hover {
+    background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+    transform: translateY(-1px);
+}
+
+/* Hide appointment time display */
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment .e-time {
+    display: none;
+}
+
+/* Quick popup header styling */
+.e-quick-popup-wrapper .e-event-popup .e-popup-header {
+    background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+    border-radius: 8px 8px 0 0;
+    padding: 16px;
+}
+
+.e-quick-popup-wrapper .e-event-popup .e-popup-header .e-subject-wrap .e-subject {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Header icons styling */
+.e-quick-popup-wrapper .e-event-popup .e-popup-header .e-header-icon-wrapper .e-edit,
+.e-quick-popup-wrapper .e-event-popup .e-popup-header .e-header-icon-wrapper .e-delete,
+.e-quick-popup-wrapper .e-event-popup .e-popup-header .e-header-icon-wrapper > button {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.e-quick-popup-wrapper .e-event-popup .e-popup-header .e-header-icon-wrapper .e-edit:hover,
+.e-quick-popup-wrapper .e-event-popup .e-popup-header .e-header-icon-wrapper .e-delete:hover,
+.e-quick-popup-wrapper .e-event-popup .e-popup-header .e-header-icon-wrapper > button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Quick popup content area */
+.e-quick-popup-wrapper .e-event-popup .e-popup-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Date and time display */
+.quickpopup__dateTime {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2E7D32;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #E8F5E8 0%, #F1F8E9 100%);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border-left: 4px solid #4CAF50;
+}
+
+/* Join button styling */
+.quickpopup__join {
+    background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3) !important;
+    transition: all 0.3s ease !important;
+    min-width: 120px !important;
+}
+
+.quickpopup__join:hover {
+    background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%) !important;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Meeting ID section */
+.quickpopup__meetingId {
+    margin-top: 12px;
+    padding: 12px;
+    background: #F9FBE7;
+    border-radius: 8px;
+    border: 1px solid #DCEDC8;
+    display: flex;
+    align-items: center;
+}
+
+.quickpopup__meetingId > svg {
+    font-size: 18px;
+    color: #689F38;
+    margin-right: 8px;
+}
+
+.quickpopup__meetingId > p {
+    margin: 0;
+    flex: 1;
+}
+
+.quickpopup__meetingId > p > a {
+    color: #558B2F;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.quickpopup__meetingId > p > a:hover {
+    color: #33691E;
+    text-decoration: underline;
+}
+
+/* Description styling */
+.quickpopup__description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #424242;
+    margin-top: 16px;
+    padding: 16px;
+    background: #FAFAFA;
+    border-radius: 8px;
+    border-left: 4px solid #81C784;
+}
+
+/* Organizer and attendees styling */
+.quickpopup__organizer {
+    color: #2E7D32;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.quickpopup__attendees {
+    color: #558B2F;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.quickpopup__attendee {
+    display: inline-block;
+    background: #E8F5E8;
+    color: #2E7D32;
+    padding: 4px 8px;
+    margin: 2px 4px 2px 0;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Calendar navigation and toolbar */
+.e-schedule .e-toolbar .e-toolbar-items .e-toolbar-item.e-today {
+    background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+    color: white;
+    border-radius: 6px;
+}
+
+.e-schedule .e-toolbar .e-toolbar-items .e-toolbar-item.e-today:hover {
+    background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%);
+}
+
+/* Calendar header dates */
+.e-schedule .e-vertical-view .e-header-cells {
+    background: linear-gradient(135deg, #F1F8E9 0%, #E8F5E8 100%);
+    color: #2E7D32;
+    font-weight: 600;
+}
+
+/* Current date highlighting */
+.e-schedule .e-vertical-view .e-header-cells.e-current-date {
+    background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+    color: white;
+}
+
+/* Work cells (calendar grid) */
+.e-schedule .e-vertical-view .e-work-cells {
+    border-color: #E0E0E0;
+}
+
+.e-schedule .e-vertical-view .e-work-cells:hover {
+    background: rgba(232, 245, 232, 0.3);
+}
+
+/* Time slots */
+.e-schedule .e-vertical-view .e-time-cells-wrap .e-time-cells {
+    color: #689F38;
+    font-weight: 500;
+}
+
+/* Event editor form styling */
+.custom-event-editor {
+    background: white;
+    border-radius: 8px;
+}
+
+.custom-event-editor .e-textlabel {
+    color: #2E7D32;
+    font-weight: 600;
+    padding: 8px;
+    width: 100px;
+}
+
+.custom-event-editor .e-field {
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.custom-event-editor .e-field:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* Multi-select dropdown styling */
+.e-dropdownbase.e-multiselect {
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+}
+
+.e-dropdownbase.e-multiselect:focus-within {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* Selected items in multiselect */
+.e-multiselect .e-chips .e-chipcontent {
+    background: #E8F5E8;
+    color: #2E7D32;
+    border-radius: 12px;
+}
+
+.e-multiselect .e-chips .e-chips-close {
+    color: #4CAF50;
+}
+
+/* DateTime picker styling */
+.e-datetimepicker {
+    border: 2px solid #E0E0E0;
+    border-radius: 6px;
+}
+
+.e-datetimepicker:focus-within {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* Popup overlay improvements */
+.e-quick-popup-wrapper {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Loading and animation improvements */
+@keyframes greenPulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.e-schedule .e-appointment.e-appointment-load {
+    animation: greenPulse 1.5s ease-in-out infinite;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .quickpopup__join {
+        width: 100% !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .quickpopup__meetingId {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .quickpopup__meetingId > svg {
+        margin-bottom: 8px;
+    }
+}
+
+/* Accessibility improvements */
+.e-schedule .e-appointment:focus {
+    outline: 3px solid #4CAF50;
+    outline-offset: 2px;
+}
+
+.quickpopup__join:focus {
+    outline: 3px solid #2E7D32;
+    outline-offset: 2px;
+}

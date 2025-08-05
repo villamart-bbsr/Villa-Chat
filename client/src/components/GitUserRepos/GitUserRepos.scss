@@ -1,0 +1,59 @@
+.userRepos {
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    overflow: auto;
+    padding:0 10px;
+    width: 935px;
+
+    .userRepos__options {
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid #c5c4c4;
+    }
+
+    .userRepos__options .active {
+        padding-bottom: 10px;
+        margin-bottom: 0;
+        border-bottom: 2px solid #000000;
+    }
+
+    .userRepos__options > h5 {
+        padding: 10px;
+    }
+
+    .userRepoDir__name {
+        padding: 10px 0;
+    }
+
+    .userRepoDir__name > button {
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
+    }
+
+    .userRepoDir__name > button > h6 {
+        color: #47bfff;
+    }
+
+    .userRepoDir__name > button > h6:hover {
+        color: #0097e9;
+    }
+}
+
+.emptygit {
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        height: 400px;
+        object-fit: contain;
+    }
+
+    h4 {
+        margin-top: 60px;
+        text-align: center;
+    }
+}

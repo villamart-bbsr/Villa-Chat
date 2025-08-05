@@ -1,0 +1,136 @@
+.profile {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+
+    .profile-container {
+        padding: 24px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+    }
+
+    .profile-card {
+        margin-top: 16px;
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
+        .MuiCardContent-root {
+            padding: 24px;
+        }
+    }
+
+    .profile-loading,
+    .profile-not-found {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 60vh;
+        padding: 20px;
+
+        .profile-container {
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+    }
+
+    // Responsive design
+    @media (max-width: 768px) {
+        padding: 16px;
+
+        .profile-container {
+            padding: 16px;
+        }
+
+        .profile-card .MuiCardContent-root {
+            padding: 16px;
+        }
+
+        .MuiBox-root {
+            flex-direction: column;
+            text-align: center;
+
+            .MuiAvatar-root {
+                margin-right: 0 !important;
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    // Button styling
+    .MuiButton-root {
+        text-transform: none;
+        border-radius: 6px;
+        font-weight: 500;
+    }
+
+    .MuiButton-containedPrimary {
+        background-color: #6264a7;
+        
+        &:hover {
+            background-color: #5a5c9d;
+        }
+    }
+
+    .MuiButton-outlined {
+        border-color: #6264a7;
+        color: #6264a7;
+        
+        &:hover {
+            border-color: #5a5c9d;
+            color: #5a5c9d;
+            background-color: rgba(98, 100, 167, 0.04);
+        }
+    }
+
+    // Avatar styling
+    .MuiAvatar-root {
+        background-color: #6264a7;
+        font-weight: 600;
+    }
+
+    // Typography styling
+    .MuiTypography-h4 {
+        font-weight: 600;
+        color: #323130;
+    }
+
+    .MuiTypography-h5 {
+        font-weight: 600;
+        color: #323130;
+    }
+
+    .MuiTypography-h6 {
+        font-weight: 600;
+        color: #323130;
+        margin-bottom: 16px;
+    }
+
+    .MuiTypography-subtitle2 {
+        font-weight: 600;
+        color: #605e5c;
+        margin-bottom: 4px;
+    }
+
+    // Divider styling
+    .MuiDivider-root {
+        background-color: #edebe9;
+    }
+
+    // Icon styling
+    .MuiSvgIcon-root {
+        color: #605e5c;
+    }
+
+    // Card hover effect
+    .profile-card {
+        transition: box-shadow 0.2s ease-in-out;
+        
+        &:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+    }
+}

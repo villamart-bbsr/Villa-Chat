@@ -1,0 +1,267 @@
+.sidebar {
+    background: linear-gradient(180deg, #f0fff4 0%, #e6fffa 100%);
+    width: 80px;
+    height: 100vh;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(72, 187, 120, 0.1);
+    position: relative;
+    overflow: hidden;
+
+    // Subtle background pattern
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 20% 50%, rgba(72, 187, 120, 0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(56, 161, 105, 0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 80%, rgba(72, 187, 120, 0.03) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    &__header {
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid rgba(72, 187, 120, 0.1);
+        position: relative;
+        z-index: 1;
+    }
+
+    &__logo {
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(72, 187, 120, 0.4);
+            }
+        }
+    }
+
+    &__content {
+        flex: 1;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__footer {
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid rgba(72, 187, 120, 0.1);
+        position: relative;
+        z-index: 1;
+    }
+
+    &__more {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        svg {
+            color: #718096;
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+            background: rgba(72, 187, 120, 0.1);
+            
+            svg {
+                color: #48bb78;
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .auth__button {
+        border: 0;
+        width: 100%;
+        padding: 0;
+        background: transparent;
+    }
+}
+
+.sidebarItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    margin: 0 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: 70px;
+
+    &__icon {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4px;
+        transition: all 0.3s ease;
+
+        img {
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &__text {
+        font-size: 10px;
+        font-weight: 500;
+        color: #4a5568;
+        margin: 0;
+        text-align: center;
+        transition: all 0.3s ease;
+        line-height: 1.2;
+    }
+
+    &__badge {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        color: white;
+        font-size: 8px;
+        font-weight: 600;
+        padding: 2px 6px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(72, 187, 120, 0.3);
+    }
+
+    // Hover states
+    &:hover,
+    &.hovered {
+        background: rgba(72, 187, 120, 0.1);
+        transform: translateY(-2px);
+
+        .sidebarItem__icon {
+            transform: scale(1.1);
+        }
+
+        .sidebarItem__text {
+            color: #48bb78;
+            font-weight: 600;
+        }
+    }
+
+    // Active state
+    &.active {
+        background: rgba(72, 187, 120, 0.15);
+        border-left: 3px solid #48bb78;
+        margin-left: 5px;
+
+        .sidebarItem__text {
+            color: #38a169;
+            font-weight: 600;
+        }
+
+        .sidebarItem__icon img {
+            filter: brightness(1.1);
+        }
+    }
+
+    // Primary button (New Meeting)
+    &.primary {
+        background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        color: white;
+        box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+
+        .sidebarItem__text {
+            color: white;
+            font-weight: 600;
+        }
+
+        .sidebarItem__icon img {
+            filter: brightness(0) invert(1);
+        }
+
+        &:hover {
+            background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(72, 187, 120, 0.4);
+
+            .sidebarItem__text {
+                color: white;
+            }
+        }
+
+        &.active {
+            background: linear-gradient(135deg, #2f855a 0%, #276749 100%);
+            border-left: 3px solid #68d391;
+            margin-left: 5px;
+        }
+    }
+}
+
+// Material-UI overrides
+.MuiSnackbar-root > .MuiPaper-root > .MuiAlert-icon > .MuiSvgIcon-root {
+    font-size: 24px;
+}
+
+.MuiSnackbar-root > .MuiPaper-root > .MuiAlert-action > .MuiIconButton-root > .MuiIconButton-label > .MuiSvgIcon-root {
+    font-size: 24px;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+        
+        &__logo .logo-icon {
+            width: 36px;
+            height: 36px;
+            font-size: 14px;
+        }
+
+        .sidebarItem {
+            padding: 10px 6px;
+            margin: 0 6px;
+            min-height: 65px;
+
+            &__icon img {
+                width: 22px;
+                height: 22px;
+            }
+
+            &__text {
+                font-size: 9px;
+            }
+        }
+    }
+}

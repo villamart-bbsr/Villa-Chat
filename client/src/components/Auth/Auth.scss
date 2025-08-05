@@ -1,0 +1,284 @@
+.auth {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    padding: 20px;
+
+    &__container {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        min-height: 600px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            max-width: 400px;
+        }
+    }
+
+    &__left {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        background: white;
+
+        @media (max-width: 768px) {
+            padding: 30px 20px;
+        }
+    }
+
+    &__right {
+        flex: 1;
+        background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="25" cy="75" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="75" cy="25" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    &__header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 8px;
+        background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    &__subtitle {
+        color: #7f8c8d;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    &__form-content {
+        .MuiTextField-root {
+            margin-bottom: 16px;
+        }
+
+        .MuiOutlinedInput-root {
+            border-radius: 12px;
+            
+            &:hover .MuiOutlinedInput-notchedOutline {
+                border-color: #48bb78;
+            }
+
+            &.Mui-focused .MuiOutlinedInput-notchedOutline {
+                border-color: #48bb78;
+                border-width: 2px;
+            }
+        }
+
+        .MuiInputLabel-outlined.Mui-focused {
+            color: #48bb78;
+        }
+    }
+
+    &__name {
+        display: flex;
+        gap: 12px;
+
+        .MuiGrid-root {
+            margin: 0;
+        }
+    }
+
+    &__submit {
+        background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        border-radius: 12px;
+        padding: 12px 0;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: none;
+        margin: 20px 0 16px 0;
+        box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+            box-shadow: 0 6px 20px rgba(72, 187, 120, 0.6);
+            transform: translateY(-2px);
+        }
+    }
+
+    &__divider {
+        text-align: center;
+        margin: 20px 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        span {
+            background: white;
+            padding: 0 16px;
+            color: #7f8c8d;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    &__microsoft {
+        border: 2px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 12px 0;
+        color: #2c3e50;
+        text-transform: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: #48bb78;
+            background: rgba(72, 187, 120, 0.05);
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+        }
+    }
+
+    &__switch {
+        text-align: center;
+        margin-top: 24px;
+    }
+
+    &__switch-btn {
+        color: #48bb78;
+        text-transform: none;
+        font-weight: 500;
+        padding: 8px 16px;
+
+        &:hover {
+            background: rgba(72, 187, 120, 0.1);
+        }
+    }
+
+    &__content {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__welcome {
+        h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 24px 0 16px 0;
+        }
+
+        p {
+            font-size: 16px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__image {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        margin-bottom: 16px;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+    }
+
+    &__features {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .feature {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 16px;
+            color: #2c3e50;
+
+            &__icon {
+                font-size: 24px;
+            }
+        }
+    }
+
+    &__stats {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 32px;
+
+        .stat {
+            text-align: center;
+
+            &__number {
+                display: block;
+                font-size: 24px;
+                font-weight: 700;
+                color: #2c3e50;
+                margin-bottom: 4px;
+            }
+
+            &__label {
+                font-size: 14px;
+                color: #7f8c8d;
+            }
+        }
+    }
+}
+
+// Input component specific styles
+.MuiGrid-root.MuiGrid-item {
+    margin: 0;
+}
+
+// Button styles
+.MuiButton-root {
+    margin: 0;
+}

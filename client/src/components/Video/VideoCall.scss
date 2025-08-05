@@ -1,0 +1,150 @@
+.video {
+    width: 75%;
+    .agora_video_player {
+        object-fit: contain !important;
+    }
+
+    .content {
+        position: relative;
+        display: grid;
+        grid-template-columns: 100%;
+        justify-items: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    #videos {
+        position: relative;
+        height: 93.74vh;
+        width: 100%;
+        background-color:#000000;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+        justify-items: center;
+        align-items: center;
+    }
+
+
+    .vid {
+        position: relative;
+        background-color:#000000;
+        height: 100%;
+        width: 100%;
+        box-shadow: var(--shadow);
+        padding: 5px;
+
+        .pin_screen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s linear 300ms, opacity 300ms;
+            z-index: 2;
+        }
+
+        .MuiButtonBase-root, .MuiIconButton-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .MuiAvatar-root {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            padding-top: 30%;
+            width: 30%;
+            background-color: #464775;
+
+            p {
+                font-size: 500%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%);
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        h6 {
+            color: #ffffff;
+            background-color: #464775;
+            width: fit-content;
+            padding: 10px;
+            border-radius: 0 5px 0 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            margin: 0;
+        }
+    }
+
+    .vid:hover > .MuiButtonBase-root > .MuiIconButton-label > .pin_screen {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s linear 0s, opacity 300ms;
+    }
+
+    .controls {
+        position: absolute;
+        bottom: 0px;
+        left: 100%;
+        transform: translateX(-100%);
+        margin: 20px auto;
+        padding: 10px 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-items: center;
+        z-index: 2;
+    }
+
+    .controls.me {
+        position: fixed;
+        left: 37%;
+        transform: translateX(-37%);
+        z-index: 10;
+
+        div[disabled] {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+    }
+
+    .video-options {
+        margin-top: 10px;
+        margin-left: 8px;
+    }
+    
+    .options-div > img {
+        height: 30px;
+    }
+    
+    .options-div {
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        margin: 0 10px;
+        background-color: aliceblue;
+    }
+
+    .remoteuser__voiceon > .MuiSvgIcon-root {
+        fill: #009400;
+    }
+
+    .remoteuser__voiceoff > .MuiSvgIcon-root {
+        fill: #c20101;
+    }
+    
+    .options-div:hover {
+        color: #D8D3FF;
+        background-color: #440a67;
+    }
+}

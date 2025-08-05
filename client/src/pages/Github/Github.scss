@@ -1,0 +1,18 @@
+.git {
+    display: flex;
+    flex-direction: row;
+
+    .github {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+
+        .github__profile {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+}

@@ -1,0 +1,135 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #464775;
+
+    .header__logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #ffffff;
+    }
+
+    .header__logo > svg {
+        height: 45px;
+        fill: #ffffff;
+        padding: 5px 16px;
+    }
+
+    .header__logo > svg:hover {
+        background-color: #6264A7;
+    }
+
+    .header__logo > h5 {
+        font-size: 18px;
+        margin: 0 20px;
+    }
+
+    .header__search {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #DADAE3;
+        padding: 3px;
+        margin-left: 10px;
+        margin: 7px;
+        border-radius: 5px;
+        width: 43%;
+    }
+    
+    .header__search > input {
+        border: none;
+        background-color: transparent;
+        outline-width: 0;
+        width: 100%;
+    }
+
+    .header__search > svg {
+        color: #616161;
+        height: 18px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    // Search results dropdown styling
+    .search__results {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        
+        .MuiList-root {
+            padding: 0;
+        }
+        
+        .MuiListItem-root {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f5f5f5;
+            transition: background-color 0.2s ease;
+            
+            &:last-child {
+                border-bottom: none;
+            }
+            
+            &:hover {
+                background-color: #f8f9fa;
+            }
+        }
+        
+        .MuiListItemAvatar-root {
+            min-width: 48px;
+        }
+        
+        .MuiAvatar-root {
+            width: 36px;
+            height: 36px;
+            font-size: 14px;
+            background-color: #6264A7;
+        }
+        
+        .MuiListItemText-primary {
+            font-weight: 500;
+            font-size: 14px;
+            color: #323130;
+        }
+        
+        .MuiListItemText-secondary {
+            font-size: 12px;
+            color: #605e5c;
+        }
+    }
+
+    .header__options {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #ffffff;
+    }
+
+    .header__options > svg {
+        margin: 0 20px;
+    }
+
+    .header__options > .header__profile > div > .MuiButtonBase-root > .MuiButton-label >.MuiAvatar-root {
+        margin: 7.5px 20px;
+        height: 30px;
+        width: 30px;
+    }
+
+    .header__options > .header__profile > div {
+        height: 100%;
+    }
+
+    .header__options > .header__profile > div > .MuiButtonBase-root {
+        height: 100%;
+    }
+
+    .header__options > .header__profile {
+        height: 45px;
+    }
+
+    .header__options > .header__profile:hover {
+        background-color: #6264A7;
+    }
+}
