@@ -173,8 +173,22 @@ const Header = () => {
     return (
         <div className="header">
             <div className="header__logo">
-                <Apps />
-                <h5 className="d-none d-md-block">Microsoft Teams</h5>
+                <div className="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="16" fill="url(#gradient1)"/>
+                        <path d="M8 12C8 10.8954 8.89543 10 10 10H22C23.1046 10 24 10.8954 24 12V20C24 21.1046 23.1046 22 22 22H10C8.89543 22 8 21.1046 8 20V12Z" fill="white"/>
+                        <circle cx="12" cy="15" r="2" fill="#22c55e"/>
+                        <circle cx="20" cy="15" r="2" fill="#22c55e"/>
+                        <path d="M12 18C12 16.8954 12.8954 16 14 16H18C19.1046 16 20 16.8954 20 18V19H12V18Z" fill="#22c55e"/>
+                        <defs>
+                            <linearGradient id="gradient1" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                                <stop stopColor="#22c55e"/>
+                                <stop offset="1" stopColor="#16a34a"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h5 className="d-none d-md-block">VillaChat</h5>
             </div>
             {user ?
                 <ClickAwayListener onClickAway={handleClickAway}>
@@ -297,7 +311,7 @@ const Header = () => {
                     </div>
                     </>
                 ):  <Link to="/">
-                        <Button className="microsoft__login ml-auto" fullWidth variant="contained">
+                        <Button className="villachat__login ml-auto" fullWidth variant="contained">
                             Sign in
                         </Button>
                     </Link>
